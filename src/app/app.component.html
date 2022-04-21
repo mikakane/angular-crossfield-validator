@@ -1,0 +1,51 @@
+<div style="width:320px;margin:0 auto;">
+  <div class="mt-5">
+    <hello name="{{ name }}"></hello>
+    <p>Start editing to see some magic happen :)</p>
+  </div>
+
+  <form [formGroup]="form">
+    <div class="mb-3">
+      <label class="form-label">Email address</label>
+      <input
+        type="email"
+        class="form-control"
+        placeholder="name@example.com"
+        formControlName="email"
+      />
+      <p class="text-danger" *ngIf="email.errors">{{ email.errors | json }}</p>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">password</label>
+      <input
+        type="password"
+        class="form-control"
+        placeholder=""
+        formControlName="password"
+      />
+      <p class="text-danger" *ngIf="password.errors">
+        {{ password.errors | json }}
+      </p>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">password- refrain</label>
+      <input
+        type="password"
+        class="form-control"
+        placeholder=""
+        formControlName="password2"
+      />
+      <p class="text-danger" *ngIf="password2.errors">
+        {{ password2.errors | json }}
+      </p>
+    </div>
+  </form>
+  <div>
+    <h3>debug</h3>
+
+    <p>value: {{ form.value | json }}</p>
+    <p>errors: {{ form.errors | json }}</p>
+    <p>invalid: {{ form.invalid | json }}</p>
+    <p>invalid: {{ form.touched | json }}</p>
+  </div>
+</div>
